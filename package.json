@@ -1,0 +1,23 @@
+{
+  "name": "randominator",
+  "version": "0.1.0",
+  "description": "Randominator is an Open Sourced Random (X) Generator. Generate Random Tokens, Strings, and Numbers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "randominator",
+    "random",
+    "random-generator",
+    "number-generator",
+    "string-generator",
+    "token-generator"
+  ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/joananespina/randominator"
+  },  
+  "author": "@joananespina",
+  "license": "MIT"
+}
