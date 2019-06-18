@@ -3,7 +3,7 @@
 
 ##### *WARNING!* This project is still in early development stages. Use at your own RISK!
 
-**Randominator** is an Open Sourced Random (X) Generator written in *Javascript*. Generate Random Tokens, Strings, Numbers, etc.
+**Randominator** is an Open Sourced Random (X) Generator written in *Javascript*. Generate Random Tokens, Strings, and Numbers.
 
 
 ## Installation
