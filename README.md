@@ -1,16 +1,19 @@
 
+
 # Randominator
 
-##### *WARNING!* This project is still in early development stages. Use at your own RISK!
+##### *IMPORTANT!* This project is still in early development stages.
 
-**Randominator** is an Open Sourced Random (X) Generator written in *Javascript*. Generate Random Tokens, Strings, and Numbers.
+**Randominator** is an Open Sourced Random (X) Generator written in *Javascript*. Generate Random Tokens, Strings, and Integers.
 
 
-## Installation
+## Get Started
 
-Right now you can only install Randominator using [npm](https://www.npmjs.com/): `npm install randominator`
+### Installation
 
-## Usage
+Right now you can only install Randominator using [npm](https://www.npmjs.com/) like so: `npm install randominator`
+
+### Import
 
 First import randominator to your project like so:
 
@@ -22,15 +25,26 @@ or
 import {generateToken, generateInt} from "randominator"
 ```
 
-and then use it in your code . . .
+You're ready to use Randominator on your code!
 
-### Generate Tokens
 
-**Randominator.generateToken(options)** - generates random alphanumeric tokens.
+## Usage
+
+### Methods
+
+Right now Randominator has two methods you can use: ***generateToken()*** and ***generateInt()***
+
+#### How to generate a Token
+
+**Randominator.generateToken(options)**
+
+##### Description
+
+Generates ***(non-cryptographically secure)*** random alphanumeric tokens.
 
 ##### Parameters
 **options** *(Object)* *(optional)*
- - characterSet *(Array)* - Set the characters used to generate the token. Acceptable string values in the array are **"lowercase"**, **"uppercase"**, and **"number"**. Defaults to ***["lowercase", "uppercase", "number"]***
+ - characterSet *(Array)* - Set the combination of characters to be used to generate the token. Acceptable string values in the array are **"lowercase"**, **"uppercase"**, and **"number"**. Defaults to ***["lowercase", "uppercase", "number"]***
  - length *(Integer)* - Set the length of the token. Defaults to **8**
 
 *Important: Test the length to your use case before using in production. Generating large data sets with the length set to a high value might cause performance issues.*
@@ -73,9 +87,13 @@ function Example () {
 
 ```
 
-### Generate Integer
+#### How to generate an Integer
 
-**Randominator.generateInt(min, max)** - generates random integers within a *minimum* to *maximum* range.
+**Randominator.generateInt(min, max)** 
+
+##### Description
+
+Generates ***(non-cryptographically secure)*** random integers within a *minimum* to *maximum* range.
 
 ##### Parameters
 **min** *(Integer)* *(required)*
@@ -108,6 +126,7 @@ function Example () {
 
 }
 ```
+
 
 ## License
 
