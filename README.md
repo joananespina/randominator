@@ -1,31 +1,31 @@
 
 
+
 # Randominator
 
-##### *IMPORTANT!* This project is still in early development stages.
+**Randominator** is a *Random (X) Generator* for *Javascript* projects. Generate Random Tokens, Strings, and Integers.
 
-**Randominator** is an Open Sourced Random (X) Generator written in *Javascript*. Generate Random Tokens, Strings, and Integers.
-
+*Open Sourced and Micro Packaged for your convenience!* :sunglasses: :clap: :clap: :clap:
 
 ## Get Started
 
 ### Installation
 
-Right now you can only install Randominator using [npm](https://www.npmjs.com/) like so: `npm install randominator`
+First things first, install Randominator using [npm](https://www.npmjs.com/): `npm install randominator`
 
 ### Import
 
-First import randominator to your project like so:
+Then, import Randominator to your project like so:
 
 ```
-import Randominator from "randominator"
+import randominator from "randominator"
 ```
 or
 ```
 import {generateToken, generateInt} from "randominator"
 ```
 
-You're ready to use Randominator on your code!
+And that's it! You're now ready to use Randominator in your project!
 
 
 ## Usage
@@ -36,7 +36,7 @@ Right now Randominator has two methods you can use: ***generateToken()*** and **
 
 #### How to generate a Token
 
-**Randominator.generateToken(options)**
+	randominator.generateToken(options)
 
 ##### Description
 
@@ -44,7 +44,11 @@ Generates ***(non-cryptographically secure)*** random alphanumeric tokens.
 
 ##### Parameters
 **options** *(Object)* *(optional)*
- - characterSet *(Array)* - Set the combination of characters to be used to generate the token. Acceptable string values in the array are **"lowercase"**, **"uppercase"**, and **"number"**. Defaults to ***["lowercase", "uppercase", "number"]***
+ - characterSet *(Array or String)* - Set the combination of characters to be used to generate the token.
+	 - Array - Acceptable string values in the array are **"lowercase"**, **"uppercase"**, and **"number"**. Defaults to ***["lowercase", "uppercase", "number"]***
+	 
+	 - String - The characters used in the String will be used to generate the token. Useful if you want to use Non-Latin Alphabet characters.
+	 
  - length *(Integer)* - Set the length of the token. Defaults to **8**
 
 *Important: Test the length to your use case before using in production. Generating large data sets with the length set to a high value might cause performance issues.*
@@ -73,8 +77,8 @@ function Example () {
 ```
 import {generateToken} from "randominator"
 
-function Example () {
-
+function Example1 () {
+	// Generate 25-character Token using lowercase letters and numbers only.
 	generateToken({
 		characterSet: ["lowercase", "number"],
 		length: 25
@@ -85,11 +89,23 @@ function Example () {
 
 }
 
+function Example2 () {
+	// Generate 5-character Token using supplied japanese characters
+	generateToken({
+		characterSet: "ランダム",
+		length: 5
+	}).then((token)=>{
+		// do something with token
+		console.log("Token", token);
+	});
+	
+}
+
 ```
 
 #### How to generate an Integer
 
-**Randominator.generateInt(min, max)** 
+	randominator.generateInt(min, max)
 
 ##### Description
 
@@ -126,7 +142,13 @@ function Example () {
 
 }
 ```
+## Issues
 
+Please report any issues at the [GitHub Repo](https://github.com/joananespina/randominator).
+
+## Support
+
+If you like Randominator and would like to support it, tell your friends and colleagues about it! :grin:
 
 ## License
 
