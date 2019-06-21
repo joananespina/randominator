@@ -76,7 +76,7 @@ import {generateToken} from "randominator"
 function Example () {
 
 	generateToken({
-		characterSet: ["lowercase", "number"]
+		characterSet: ["lowercase", "number"],
 		length: 25
 	}).then((token)=>{
 		// do something with token
