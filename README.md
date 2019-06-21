@@ -1,6 +1,7 @@
 
 
 
+
 # Randominator
 
 **Randominator** is a *Random (X) Generator* for *Javascript* projects. Generate Random Tokens, Strings, and Integers.
@@ -44,8 +45,9 @@ Generates ***(non-cryptographically secure)*** random alphanumeric tokens.
 
 ##### Parameters
 **options** *(Object)* *(optional)*
- - characterSet *(Array or String)* - Set the combination of characters to be used to generate the token.
-	 - Array - Acceptable string values in the array are **"lowercase"**, **"uppercase"**, and **"number"**. Defaults to ***["lowercase", "uppercase", "number"]***
+ - characterSet *(Array or String)* - Set the combination of characters to be used to generate the token. Defaults to ***["lowercase", "uppercase", "number"]***
+ 
+	 - Array - Acceptable string values in the array are "lowercase", "uppercase", and "number".
 	 
 	 - String - The characters used in the String will be used to generate the token. Useful if you want to use Non-Latin Alphabet characters.
 	 
@@ -58,12 +60,12 @@ Returns a Promise. Results to a string value if the promise resolves.
 
 ##### Basic Example
 
-*Generate a default Token (8-characters long, alphanumeric Token)*
+**
 ```
 import {generateToken} from "randominator"
 
-function Example () {
-
+function Example1 () {
+	// Generate a default settings Token (8-characters long and Alphanumeric)
 	generateToken().then((token)=>{
 		// do something with token
 		console.log("Token", token);
@@ -71,14 +73,8 @@ function Example () {
 
 }
 
-```
-
-*Generate a 25-characters long Token with only lowercase letters and numbers*
-```
-import {generateToken} from "randominator"
-
-function Example1 () {
-	// Generate 25-character Token using lowercase letters and numbers only.
+function Example2 () {
+	// Generate 25-characters long Token using lowercase letters and numbers only.
 	generateToken({
 		characterSet: ["lowercase", "number"],
 		length: 25
@@ -89,8 +85,8 @@ function Example1 () {
 
 }
 
-function Example2 () {
-	// Generate 5-character Token using supplied japanese characters
+function Example3 () {
+	// Generate 5-characters long Token using supplied japanese characters
 	generateToken({
 		characterSet: "ランダム",
 		length: 5
