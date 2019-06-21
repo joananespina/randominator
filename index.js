@@ -3,21 +3,39 @@ const generator = ({characterSet, length}) => {
   // https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
   // High performance method to generate random string (Not for generating secure tokens)
 
-  return new Promise((resolve)=>{
+  return new Promise((resolve, reject)=>{
 
     var charsToUse = "";
 
-    if (characterSet.includes("lowercase") === true) {
-      charsToUse += "abcdefghijklmnopqrstuvwxyz";
-    }
+    if (Array.isArray(characterSet) === true) {
 
-    if (characterSet.includes("uppercase") === true) {
-      charsToUse += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    }
+      if (characterSet.includes("lowercase") === false
+      && characterSet.includes("uppercase") === false
+      && characterSet.includes("number") === false) {
+        return reject(new Error("invalid_character_set_array"));
+      }
 
-    if (characterSet.includes("number") === true) {
-      charsToUse += "0123456789";
-    }    
+      if (characterSet.includes("lowercase") === true) {
+        charsToUse += "abcdefghijklmnopqrstuvwxyz";
+      }
+
+      if (characterSet.includes("uppercase") === true) {
+        charsToUse += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      }
+
+      if (characterSet.includes("number") === true) {
+        charsToUse += "0123456789";
+      } 
+
+    } else if (typeof characterSet === "string") {
+
+      charsToUse = characterSet;
+
+    } else {
+
+      return reject(new Error("unknown_character_set"));
+
+    }
 
     const characters = charsToUse;
     const charactersLength = characters.length;
@@ -80,7 +98,7 @@ const generateInt = (min, max) => {
 
 const generateToken = (options) => {
 
-  // options.characterSet = (ARR) ["lowercase", "uppercase", "number"];
+  // options.characterSet = (ARR or STR) ["lowercase", "uppercase", "number"] or "ABCdef123!@#";
   // options.length = (INT) any number / performance hit for long length
 
   return new Promise((resolve)=>{
@@ -99,6 +117,16 @@ const generateToken = (options) => {
 
     generator(options).then((result)=>{
       return resolve(result);
+    }).catch((error)=>{
+
+      if (error.message === "unknown_character_set") {
+        error = new Error("generateToken({characterSet}) must be String or Array.");
+      } else if (error.message === "invalid_character_set_array") {
+        error = new Error("generateToken({characterSet}) invalid values used in Array.");
+      }
+
+      return reject(error);
+
     });
 
   });
