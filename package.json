@@ -1,6 +1,6 @@
 {
   "name": "randominator",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Randominator is an Open Sourced Random (X) Generator written in Javascript. Generate Random Tokens, Strings, and Integers.",
   "main": "index.js",
   "scripts": {},
@@ -14,7 +14,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/joananespina/randominator"
+    "url": "git+https://github.com/joananespina/randominator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joananespina/randominator/issues"
   },
   "author": "@joananespina",
   "license": "MIT",

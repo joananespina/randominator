@@ -8,7 +8,7 @@
 
 ### Installation
 
-Install Randominator using [npm](https://www.npmjs.com/): `npm install randominator`
+Install Randominator using [npm](https://www.npmjs.com/package/randominator): `npm install randominator`
 
 ### Basic Usage
 
