@@ -1,37 +1,27 @@
-
-
-
-
 # Randominator
 
 **Randominator** is a *Random (X) Generator* for *Javascript* projects. Generate Random Tokens, Strings, and Integers.
 
 *Open Sourced and Micro Packaged for your convenience!* :sunglasses: :clap: :clap: :clap:
 
-## Get Started
+## Quick Start
 
 ### Installation
 
-First things first, install Randominator using [npm](https://www.npmjs.com/): `npm install randominator`
+Install Randominator using [npm](https://www.npmjs.com/): `npm install randominator`
 
-### Import
-
-Then, import Randominator to your project like so:
+### Basic Usage
 
 ```
-import randominator from "randominator"
+import randominator from "randominator";
+
+randominator.generateToken().then((token)=>{
+	// do something with token
+	console.log(token);
+});
 ```
-or
-```
-import {generateToken, generateInt} from "randominator"
-```
 
-And that's it! You're now ready to use Randominator in your project!
-
-
-## Usage
-
-### Methods
+## Methods
 
 Right now Randominator has two methods you can use: ***generateToken()*** and ***generateInt()***
 
@@ -47,7 +37,7 @@ Generates ***(non-cryptographically secure)*** random alphanumeric tokens.
 **options** *(Object)* *(optional)*
  - characterSet *(Array or String)* - Set the combination of characters to be used to generate the token. Defaults to ***["lowercase", "uppercase", "number"]***
  
-	 - Array - Acceptable string values in the array are "lowercase", "uppercase", and "number".
+	 - Array - Array of string values, acceptable string values in the array are "lowercase", "uppercase", and "number".
 	 
 	 - String - The characters used in the String will be used to generate the token. Useful if you want to use Non-Latin Alphabet characters.
 	 
@@ -60,7 +50,7 @@ Returns a Promise. Results to a string value if the promise resolves.
 
 ##### Basic Example
 
-**
+
 ```
 import {generateToken} from "randominator"
 
@@ -122,11 +112,13 @@ Generates ***(non-cryptographically secure)*** random integers within a *minimum
 Returns a Promise. Results to an integer value if the promise resolves.
 
 ##### Basic Example
-*Generate an Integer value from 10 to 1000*
+
 ```
 import {generateInt} from "randominator"
 
 function Example () {
+	
+	// Generate a random Integer value from 10 to 1000
 
 	generateInt(10, 1000).then((value)=>{
 		// do something with value
