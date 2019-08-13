@@ -132,7 +132,7 @@ function Example () {
 ```
 ## Issues
 
-Please report any issues at the [GitHub Repo](https://github.com/joananespina/randominator).
+Please report any issues [here](https://github.com/joananespina/randominator/issues).
 
 ## Support
 
